@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("api/bankPayments")
 public class BankPaymentController {
-    @PostMapping("/processPayment")
+    @PostMapping("/process-payment")
     public ResponseEntity<String> makePayment(@RequestBody PaymentRequest paymentRequest){
         return new ResponseEntity<>("Payment successful for bankId " + paymentRequest.getBankId() + " with UID " + UUID.randomUUID().toString(), HttpStatus.OK);
     }
